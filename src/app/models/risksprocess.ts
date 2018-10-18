@@ -5,6 +5,6 @@ export class risksprocess{
     public objective: string,
     public createdate: any,
     public description: any,
-    public description: number
+    //public description: number
   ){}
 }
