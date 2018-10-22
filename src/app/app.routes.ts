@@ -6,9 +6,11 @@ import { AreasDetailComponent } from './components/audits/areas-detail/areas-det
 import { QuestionDetailComponent } from './components/audits/question-detail/question-detail.component';
 import { QuestionUpdateComponent } from './components/audits/question-update/question-update.component';
 import { QuestionNewComponent } from './components/audits/question-new/question-new.component';
+import { QuestionListComponent } from './components/audits/question-list/question-list.component';
 
 const appRoutes: Routes = [
   {path:'audits/areas', component: AreasDetailComponent },
+  {path:'audits/question', component: QuestionListComponent },
   {path:'audits/question-new', component: QuestionNewComponent },
   {path:'audits/question/:id', component: QuestionDetailComponent },
   {path:'audits/question-update/:id', component: QuestionUpdateComponent },
