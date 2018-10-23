@@ -29,7 +29,7 @@ export class QuestionNewComponent implements OnInit {
       response => {
         console.log(response);
         this.question = response.question;
-        this._router.navigate(['audits/question'],{'status_question':'success', 'status_message':'La pregunta se elimino correctamente.'} );
+        this._router.navigate(['audits/question']);
       },
       error => {
         console.log(<any>error);

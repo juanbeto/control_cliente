@@ -55,7 +55,7 @@ export class QuestionListComponent implements OnInit {
         this.getQuestions();
         this.status_question = 'success';
         this.status_message = 'La pregunta se elimino correctamente.';
-      }
+      },
       error=>{
         console.log(error);
         this.status_question = 'error';
