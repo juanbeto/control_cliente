@@ -3,12 +3,18 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>Adminsitrar <b>Preguntas</b></h2>
+						<h2>Adminsitrar <b>Preguntas {{label_message}}</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
+						<a [routerLink]="['../question-new']" class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
 					</div>
                 </div>
+            </div>
+            <div class="alert alert-danger" *ngIf="status_question == 'error'" >
+              {{status_message}}
+            </div>
+            <div class="alert alert-success" *ngIf="status_question == 'success'" >
+              {{status_message}}
             </div>
             <div class="cargando" *ngIf="!questions">
               Cargando ...
@@ -39,8 +45,8 @@
                         <td>1</td>
                         <td>{{question.NAME}}</td>
                         <td>
-                              <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit" class="btn btn-warning">Editar</i></a>
-                              <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete" class="btn btn-danger">Borrar</i></a>
+                          <a [routerLink]="['../question-update', question.ID]" title="edit" class="edit btn btn-warning">Editar</a>
+                          <a (click)="delete(question.ID)" title="delete" class="delete btn btn-danger">Borrar</a>
                         </td>
                       </tr>
                   </tbody>

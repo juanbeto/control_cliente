@@ -78,10 +78,12 @@
 		color: #2196F3;
 	}
 	table.table td a.edit {
-        color: #FFC107;
+				color: #FFFFFF;
+				margin-right: 5px;
     }
     table.table td a.delete {
-        color: #F44336;
+        color: #FFFFFF;
+				margin-right: 5px;
     }
     table.table td i {
         font-size: 19px;

@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   {path:'audits/question', component: QuestionListComponent },
   {path:'audits/question-new', component: QuestionNewComponent },
   {path:'audits/question/:id', component: QuestionDetailComponent },
-  {path:'audits/question-update/:id', component: QuestionUpdateComponent },
+  {path:'audits/question-update/:id', component: QuestionUpdateComponent },   
   {path:'**', pathMatch: 'full', redirectTo: '' }
 ];
 

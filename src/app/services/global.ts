@@ -1,4 +1,5 @@
 export var GLOBAL = {
-  url: '/controlinterno/public/api/'
+  url: 'http://localhost/controlinterno/public/api/',
+  url2: 'http://localhost/controlinterno/public/api/',
 
 };

@@ -11,8 +11,8 @@ import { QuestionService } from '../../../services/question.service';
   providers: [ QuestionService ]
 })
 export class QuestionNewComponent implements OnInit {
-  public page_title: string;
-  public page_name: string;
+  public label_title: string;
+  public label_name: string;
   public question: auditquestion;
   constructor(
     private _route: ActivatedRoute,
@@ -20,8 +20,8 @@ export class QuestionNewComponent implements OnInit {
     private _questionService: QuestionService
 
   ) {
-    this.page_title = 'Nueva pregunta';
-    this.page_name = '¿Pregunta?';
+    this.label_title = 'Nueva pregunta';
+    this.label_name = '¿Pregunta?';
   }
 
   onSubmit(){
@@ -29,6 +29,7 @@ export class QuestionNewComponent implements OnInit {
       response => {
         console.log(response);
         this.question = response.question;
+        this._router.navigate(['audits/question'],{'status_question':'success', 'status_message':'La pregunta se elimino correctamente.'} );
       },
       error => {
         console.log(<any>error);
@@ -37,7 +38,7 @@ export class QuestionNewComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.question= new auditquestion(null, '');
+    this.question= new auditquestion(null, '','','',null,null);
   }
 
 }

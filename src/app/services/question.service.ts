@@ -20,6 +20,7 @@ export class QuestionService{
   }
 
   create(question: auditquestion): Observable<any>{
+    console.log(this.url);
     let json = JSON.stringify(question);
     let params = "json= "+json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
@@ -29,5 +30,23 @@ export class QuestionService{
   getQuestions(): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get<any>(this.url, {headers: headers});
+  }
+
+  getQuestion(id): Observable<any>{
+    console.log(this.url);
+    //let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.get(this.url+'/'+id);
+  }
+
+  update(question:auditquestion, id): Observable<any>{
+    let json = JSON.stringify(question);
+    let params = "json= "+json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.put(this.url+'/'+id,  params, {headers: headers});
+  }
+
+  delete(id): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.delete(this.url+'/'+id, {headers: headers}); 
   }
 }
