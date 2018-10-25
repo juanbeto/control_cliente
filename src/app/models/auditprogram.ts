@@ -1,14 +1,18 @@
 export class auditprogram{
 	constructor(
- 		public id: number,
-    public begin: any,
-    public end: any,
-    public objectives: string,
-    public scope: string,
-    public resposabilities: string,
-    public approved: string,
-    public resources: string,
-    public observation: string,
-    public enable: string,
-    public is_delete: string){}
+ 		public ID: number,
+    public BEGIN: any,
+    public END: any,
+    public OBJECTIVES: string,
+    public SCOPE: string,
+    public RESPONSABILITIES: string,
+    public APPROVED: string,
+    public RESOURCES: string,
+    public OBSERVATION: string,
+    public ENABLE: string,
+    public IS_DELETE: string,
+		public CREATED_AT: any,
+		public UPDATED_AT: any,
+		public CREATED_BY	: number,
+		public UPDATED_BY: number){}
 }

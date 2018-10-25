@@ -1,45 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { GLOBAL } from './global';
-import { auditquestion } from '../models/index_audit';
+import { GLOBAL } from '../global';
+import { auditformat } from '../../models/index_audit';
 
+@Injectable({
+  providedIn: 'root'
+})
+export class FormatService {
 
-@Injectable()
-export class QuestionService{
   private url_service: string;
   public url: string;
   constructor(
     public _http: HttpClient
   ){
-    this.url = GLOBAL.url+"audit/question";
+    this.url = GLOBAL.url+"audit/format";
   }
 
-  prueba(){
-    return "HGola mundo";
-  }
-
-  create(question: auditquestion): Observable<any>{
-    console.log(this.url);
-    let json = JSON.stringify(question);
+  create(format: auditformat): Observable<any>{
+    let json = JSON.stringify(format);
     let params = "json= "+json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.post<any>(this.url, params, {headers: headers});
   }
 
-  getQuestions(): Observable<any>{
+  getFormats(): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get<any>(this.url, {headers: headers});
   }
 
-  getQuestion(id): Observable<any>{
+  getFormat(id): Observable<any>{
     console.log(this.url);
-    //let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.get(this.url+'/'+id);
   }
 
-  update(question:auditquestion, id): Observable<any>{
-    let json = JSON.stringify(question);
+  getFormatBy(format): Observable<any>{
+    let json = JSON.stringify(format);
+    let params = "json= "+json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.post<any>(this.url+'/search', params, {headers: headers});
+  }
+
+  update(format:auditformat, id): Observable<any>{
+    let json = JSON.stringify(format);
     let params = "json= "+json;
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.put(this.url+'/'+id,  params, {headers: headers});

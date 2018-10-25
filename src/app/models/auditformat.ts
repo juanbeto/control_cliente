@@ -1,8 +1,8 @@
 export class auditformat{
 	constructor(
- 		public id: number,
-    public name: string,
-    public code: string,
-    public version: string,
-    public format: string){}
+ 		public ID: number,
+    public NAME: string,
+    public CODE: string,
+    public VERSION: string,
+    public FORMAT: string){}
 }

@@ -11,6 +11,15 @@ import { QuestionNewComponent } from './components/audits/question-new/question-
 import { QuestionDetailComponent } from './components/audits/question-detail/question-detail.component';
 import { QuestionUpdateComponent } from './components/audits/question-update/question-update.component';
 import { QuestionListComponent } from './components/audits/question-list/question-list.component';
+import { FormatListComponent } from './components/audits/format/format-list/format-list.component';
+import { FormatDetailComponent } from './components/audits/format/format-detail/format-detail.component';
+import { FormatNewComponent } from './components/audits/format/format-new/format-new.component';
+import { FormatUpdateComponent } from './components/audits/format/format-update/format-update.component';
+import { ProgramListComponent } from './components/audits/program/program-list/program-list.component';
+import { ProgramNewComponent } from './components/audits/program/program-new/program-new.component';
+import { ProgramUpdateComponent } from './components/audits/program/program-update/program-update.component';
+import { ProgramDetailComponent } from './components/audits/program/program-detail/program-detail.component';
+import { AuditListComponent } from './components/audits/program/audit-list/audit-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +28,16 @@ import { QuestionListComponent } from './components/audits/question-list/questio
     QuestionNewComponent,
     QuestionDetailComponent,
     QuestionUpdateComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    FormatListComponent,
+    FormatDetailComponent,
+    FormatNewComponent,
+    FormatUpdateComponent,
+    ProgramListComponent,
+    ProgramNewComponent,
+    ProgramUpdateComponent,
+    ProgramDetailComponent,
+    AuditListComponent
   ],
   imports: [
     BrowserModule,
