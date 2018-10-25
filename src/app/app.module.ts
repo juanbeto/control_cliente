@@ -19,7 +19,10 @@ import { ProgramListComponent } from './components/audits/program/program-list/p
 import { ProgramNewComponent } from './components/audits/program/program-new/program-new.component';
 import { ProgramUpdateComponent } from './components/audits/program/program-update/program-update.component';
 import { ProgramDetailComponent } from './components/audits/program/program-detail/program-detail.component';
-import { AuditListComponent } from './components/audits/program/audit-list/audit-list.component';
+import { AuditListComponent } from './components/audits/audit/audit-list/audit-list.component';
+import { AuditNewComponent } from './components/audits/audit/audit-new/audit-new.component';
+import { AuditDetailComponent } from './components/audits/audit/audit-detail/audit-detail.component';
+import { AuditUpdateComponent } from './components/audits/audit/audit-update/audit-update.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { AuditListComponent } from './components/audits/program/audit-list/audit
     ProgramNewComponent,
     ProgramUpdateComponent,
     ProgramDetailComponent,
-    AuditListComponent
+    AuditListComponent,
+    AuditNewComponent,
+    AuditDetailComponent,
+    AuditUpdateComponent
   ],
   imports: [
     BrowserModule,

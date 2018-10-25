@@ -29,6 +29,13 @@ export class AuditService {
     return this._http.get<any>(this.url, {headers: headers});
   }
 
+  getAuditsByProgram(id_program): Observable<any>{
+    let params = 'json={"id_program":"'+id_program+'"}';
+    console.log(params);
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.post<any>(this.url+"/search", params, {headers: headers});
+  }
+
   getAudit(id): Observable<any>{
     return this._http.get(this.url+'/'+id);
   }

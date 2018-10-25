@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { auditprogram, auditformat, audit } from '../../../../models/index_audit';
 import { ProgramService } from '../../../../services/audits/program.service';
 import { FormatService } from '../../../../services/audits/format.service';
-import { AuditService } from '../../../../services/audits/format.service';
+import { AuditService } from '../../../../services/audits/audit.service';
 
 @Component({
   selector: 'app-program-detail',
@@ -27,6 +27,7 @@ export class ProgramDetailComponent implements OnInit {
   public label_periodo: string;
   public actions: string;
   public program : auditprogram;
+  public audits[] : audit;
 
   public format = new auditformat(null,null,null,null,'_PlanAuditIntern');
 
@@ -34,7 +35,8 @@ export class ProgramDetailComponent implements OnInit {
     private _route: ActivatedRoute,
     private _router: Router,
     private _programService: ProgramService,
-    private _formatService: FormatService
+    private _formatService: FormatService,
+    private _auditService: AuditService
   ) {
     this.label_title = 'Nueva Programación';
     this.label_id= '#';
@@ -68,8 +70,8 @@ export class ProgramDetailComponent implements OnInit {
         console.log(<any>error);
       }
     );
-
   }
+
 
 
   getProgram(){
@@ -80,6 +82,7 @@ export class ProgramDetailComponent implements OnInit {
           response => {
             if(response.status == 'success'){
               this.program = response.program;
+              this.getAudits();
             }else{
               this._router.navigate(['audits/program']);
             }
@@ -91,5 +94,20 @@ export class ProgramDetailComponent implements OnInit {
       }
     );
   }
+
+  getAudits(){
+    this._auditService.getAuditsByProgram(this.program.ID).subscribe(
+      response =>{
+
+        if(response.status == 'success'){
+          this.audits = response.audits;
+        }
+      },
+      error=>{
+          console.log(error);
+      }
+    );
+  }
+
 
 }
