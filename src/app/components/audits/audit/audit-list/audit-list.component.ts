@@ -10,7 +10,6 @@ import { AuditService } from '../../../../services/audits/audit.service';
 })
 export class AuditListComponent implements OnInit {
   @Input() public _audit: audit;
-  @Input() public index: number;
 
   public label_title: string;
   public label_id: string;
@@ -47,8 +46,8 @@ export class AuditListComponent implements OnInit {
       this.label_objective= 'Objetivos';
       this.label_id_user_manager = 'Alcance';
       this.label_id_user_resposible = 'Responsables';
-      this.label_date_begin = 'Fecha Inicio';
-      this.label_date_end = 'Fecha Fin';
+      this.label_date_begin = 'Inicio';
+      this.label_date_end = 'Final';
       this.label_scope = 'Observaciones';
       this.label_name_process = 'Habilitado';
       this.label_criteria = 'Eliminado';
@@ -67,7 +66,7 @@ export class AuditListComponent implements OnInit {
     delete(id){
       this._auditService.delete(id).subscribe(
         response => {
-          this.getAudits();
+          //this.getAudits();
           this.status = 'success';
           this.status_message = 'La auditoria se eliminó correctamente.';
         },

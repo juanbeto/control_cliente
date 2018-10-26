@@ -18,6 +18,11 @@ import { ProgramDetailComponent } from './components/audits/program/program-deta
 import { ProgramNewComponent } from './components/audits/program/program-new/program-new.component';
 import { ProgramUpdateComponent } from './components/audits/program/program-update/program-update.component';
 
+import { AuditListComponent } from './components/audits/audit/audit-list/audit-list.component';
+import { AuditDetailComponent } from './components/audits/audit/audit-detail/audit-detail.component';
+import { AuditNewComponent } from './components/audits/audit/audit-new/audit-new.component';
+import { AuditUpdateComponent } from './components/audits/audit/audit-update/audit-update.component';
+
 
 const appRoutes: Routes = [
   {path:'audits/areas', component: AreasDetailComponent },
@@ -35,6 +40,11 @@ const appRoutes: Routes = [
   {path:'audits/program-new', component: ProgramNewComponent },
   {path:'audits/program/:id', component: ProgramDetailComponent },
   {path:'audits/program-update/:id', component: ProgramUpdateComponent },
+
+  {path:'audits/audit', component: AuditListComponent },
+  {path:'audits/audit-new', component: AuditNewComponent },
+  {path:'audits/audit/:id', component: AuditDetailComponent },
+  {path:'audits/audit-update/:id', component: AuditUpdateComponent },
 
   {path:'**', pathMatch: 'full', redirectTo: '' }
 ];

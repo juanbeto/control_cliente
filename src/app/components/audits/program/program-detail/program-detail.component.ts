@@ -8,7 +8,8 @@ import { AuditService } from '../../../../services/audits/audit.service';
 @Component({
   selector: 'app-program-detail',
   templateUrl: './program-detail.component.html',
-  styleUrls: ['./program-detail.component.css']
+  styleUrls: ['./program-detail.component.css',
+              '../../audit/audit-list/audit-list.component.css']
 })
 export class ProgramDetailComponent implements OnInit {
 
@@ -27,9 +28,9 @@ export class ProgramDetailComponent implements OnInit {
   public label_periodo: string;
   public actions: string;
   public program : auditprogram;
-  public audits[] : audit;
+  public audits : audit;
 
-  public format = new auditformat(null,null,null,null,'_PlanAuditIntern');
+  public format = new auditformat(null,null,null,null,'_YearlyProgram');
 
   constructor(
     private _route: ActivatedRoute,
@@ -40,24 +41,24 @@ export class ProgramDetailComponent implements OnInit {
   ) {
     this.label_title = 'Nueva Programación';
     this.label_id= '#';
-    this.label_begin= 'Inicio';
-    this.label_end= 'Final';
-    this.label_objectives= 'Objetivos';
-    this.label_scope= 'Alcance';
-    this.label_responsabilities= 'Responsables';
-    this.label_approved= 'Aprobado';
-    this.label_resource= 'Recursos';
-    this.label_observation= 'Observaciones';
-    this.label_enable= 'Habilitado';
+    this.label_begin= 'FECHA ELABORACIÓN';
+    this.label_end= 'PERIODO';
+    this.label_objectives= 'OBJETIVOS';
+    this.label_scope= 'ALCANCE';
+    this.label_responsabilities= 'RESPONSABLE';
+    this.label_approved= 'APROBADO';
+    this.label_resource= 'RECURSOS';
+    this.label_observation= 'OBSERCACIONES';
+    this.label_enable= 'HABILITADO';
     this.label_is_delete= 'Eliminado';
-    this.label_periodo = 'Periodo de Ejecución';
+    this.label_periodo = 'PERIODO DE EJECUCIÓN';
     this.actions = 'Acciones';
     this.program = new auditprogram(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
    }
 
   ngOnInit() {
     console.log('program.list component cargado correctamente');
-    this.getFormat()
+    this.getFormat();
     this.getProgram();
   }
 

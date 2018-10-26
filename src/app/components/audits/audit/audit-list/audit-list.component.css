@@ -1,7 +1,7 @@
 /* audit list */
 .formato > div{
   margin-bottom:  2px;
-  padding : 5px;
+  /* padding : 5px; */ */
   font-size: 15px;
   line-height: 110%;
 }
