@@ -48,7 +48,7 @@ export class ProgramDetailComponent implements OnInit {
     this.label_responsabilities= 'RESPONSABLE';
     this.label_approved= 'APROBADO';
     this.label_resource= 'RECURSOS';
-    this.label_observation= 'OBSERCACIONES';
+    this.label_observation= 'OBSERVACIONES';
     this.label_enable= 'HABILITADO';
     this.label_is_delete= 'Eliminado';
     this.label_periodo = 'PERIODO DE EJECUCIÓN';

@@ -2,19 +2,8 @@
 <br/>
 
 <!-- ENCABEZADO -->
-<div class="container">
-  <div class="row bg-primary formato text-white text-center rounded">
-    <div class="col-sm-5">
-      <strong class="text-dark">FORMATO:</strong> {{format.NAME}}
-    </div>
-    <div class="col-sm-4">
-      <strong class="text-dark">CÓDIGO:</strong> {{format.CODE}}
-    </div>
-    <div class="col-sm-3">
-      <strong class="text-dark">VERSIÓN:</strong>   {{format.VERSION}}
-    </div>
-  </div>
-</div>
+<app-format-detail [format]="format"></app-format-detail>
+
 <br/>
 <br/>
 
@@ -40,7 +29,7 @@
   </div>
   <div class="row bg-secondary">
     <div class="col-sm-12">
-      <strong class="text-dark">{{label_responsabilities}}:</strong> {{program.RESPONSABILITIES}}
+      <strong class="text-dark">{{label_responsabilities}}:</strong> {{program.RESPOSABILITIES}}
     </div>
   </div>
   <div class="row bg-secondary">

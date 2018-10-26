@@ -20,8 +20,8 @@ export class AuditDetailComponent implements OnInit {
   public label_objective: string;
   public label_id_user_manager: string;
   public label_id_user_resposible: string;
-  public label_date_begin: string;
-  public label_date_end: string;
+  public label_begin: string;
+  public label_end: string;
   public label_scope: string;
   public label_name_process: string;
   public label_criteria: string;
@@ -34,7 +34,7 @@ export class AuditDetailComponent implements OnInit {
 
   public status: string;
   public status_message: string;
-  public _audit: audit;
+  public _audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);
   public activities: auditactivities;
   public plannings: auditplanning;
 
@@ -55,16 +55,16 @@ export class AuditDetailComponent implements OnInit {
     this.label_objective= 'Objetivos';
     this.label_id_user_manager = 'Alcance';
     this.label_id_user_resposible = 'Responsables';
-    this.label_date_begin = 'Inicio';
-    this.label_date_end = 'Final';
-    this.label_scope = 'Observaciones';
-    this.label_name_process = 'Habilitado';
-    this.label_criteria = 'Eliminado';
-    this.label_observations = 'Periodo de Ejecución';
-    this.label_approved = 'Periodo de Ejecución';
-    this.label_global = 'Periodo de Ejecución';
-    this.label_numerals = 'Periodo de Ejecución';
-    this.label_meci = 'Periodo de Ejecución';
+    this.label_begin = 'Inicio';
+    this.label_end = 'Periodo';
+    this.label_scope = 'Alcance';
+    this.label_name_process = 'Nombre del proceso';
+    this.label_criteria = 'Criterio';
+    this.label_observations = 'Observaciones';
+    this.label_approved = 'Aprobado';
+    this.label_global = 'Global';
+    this.label_numerals = 'Numerales';
+    this.label_meci = 'MECI';
     this.actions = 'Acciones';
   }
 
@@ -93,8 +93,9 @@ export class AuditDetailComponent implements OnInit {
           response => {
             if(response.status == 'success'){
               this._audit = response.audit;
-              this.getActivities();
-              this.getPlannings();
+              console.log(this._audit);
+              //this.getActivities();
+              //this.getPlannings();
             }else{
               this._router.navigate(['audits/program']);
             }
