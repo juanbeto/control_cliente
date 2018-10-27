@@ -94,8 +94,8 @@ export class AuditDetailComponent implements OnInit {
             if(response.status == 'success'){
               this._audit = response.audit;
               console.log(this._audit);
-              //this.getActivities();
-              //this.getPlannings();
+              this.getActivities();
+              this.getPlannings();
             }else{
               this._router.navigate(['audits/program']);
             }

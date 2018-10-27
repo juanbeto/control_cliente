@@ -30,10 +30,8 @@ export class PlanningService {
   }
 
   getPlanningsByAudit(id_audit): Observable<any>{
-    let params = 'json={"id_audit":"'+id_audit+'"}';
-    console.log(params);
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this._http.post<any>(this.url+"/search", params, {headers: headers});
+    return this._http.get<any>(this.url+"/"+id_audit+"/audit", {headers: headers});
   }
 
   getPlanning(id): Observable<any>{

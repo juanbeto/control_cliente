@@ -23,6 +23,8 @@ import { AuditListComponent } from './components/audits/audit/audit-list/audit-l
 import { AuditNewComponent } from './components/audits/audit/audit-new/audit-new.component';
 import { AuditDetailComponent } from './components/audits/audit/audit-detail/audit-detail.component';
 import { AuditUpdateComponent } from './components/audits/audit/audit-update/audit-update.component';
+import { PlanningListComponent } from './components/audits/planning/planning-list/planning-list.component';
+import { ActivitieListComponent } from './components/audits/activitie/activitie-list/activitie-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { AuditUpdateComponent } from './components/audits/audit/audit-update/aud
     AuditListComponent,
     AuditNewComponent,
     AuditDetailComponent,
-    AuditUpdateComponent
+    AuditUpdateComponent,
+    PlanningListComponent,
+    ActivitieListComponent
   ],
   imports: [
     BrowserModule,
