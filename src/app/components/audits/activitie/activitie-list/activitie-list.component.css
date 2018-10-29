@@ -37,3 +37,15 @@
 #table-activities{
   font-size: 10px;
 }
+
+.table-title .btn {
+  color: #fff;
+    float: right;
+    font-size: 16px;
+    border: none;
+    min-width: 50px;
+    border-radius: 2px;
+    border: none;
+    outline: none !important;
+    margin-left: 10px;
+}

@@ -1,6 +1,13 @@
 <div class=" ">
   <div class="table-title col-12" (click)="show_activities = !show_activities">
-      <h2>Actividades</h2>
+    <div class="row">
+        <div class="col-sm-6">
+          <h2>Actividades</h2>
+        </div>
+        <div class="col-sm-6 ">
+          <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities"><i class="fa fa-plus-circle"> Nueva Actividad</i></a>
+        </div>
+      </div>
   </div>
 </div>
 
@@ -44,7 +51,6 @@
             <td>{{activitie.NUMERALS_MECI}} </td>
             <td>{{activitie.ID_USER_AUDITOR}} </td>
             <td>
-              <a [routerLink]="['../program', activitie.ID]" title="edit" class="edit btn btn-primary"><i class="fa fa-eye"> </i></a>
               <a [routerLink]="['../program-update', activitie.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
               <a (click)="delete(activitie.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
             </td>
@@ -53,3 +59,4 @@
   </table>
 </div>
 </div>
+<app-activitie-new  *ngIf="form_activities" (formactivities)="ocultarActividad()"></app-activitie-new>

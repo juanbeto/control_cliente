@@ -17,6 +17,8 @@ export class ActivitieListComponent implements OnInit {
   public label_auditor: string;
   public actions: string;
 
+  public activitie = new auditactivities(null,null,null,null,null,null,null,null);
+
   @Input() public activities: auditactivities;
 
   constructor() {
@@ -32,6 +34,10 @@ export class ActivitieListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ocultarActividad(){
+    this.show_activities = false;
   }
 
 }
