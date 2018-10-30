@@ -7,15 +7,15 @@
                 <h3>{{label_title}} Actividad</h3>
                 <form name= "form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                      <div class="form-group">
-                        <label for="begin">{{label_begin}}</label>
-                        <input type="date" class="form-control" name="begin" [(ngModel)]="activitie.BEGIN" #begin="ngModel" required />
-                        <div *ngIf="begin.invalid" class="invalid-feedback">
-                            <div *ngIf="begin.errors.required">Fecha requerida</div>
+                        <label for="BEGIN">{{label_begin}}</label>
+                        <input [(ngModel)]="activitie.BEGIN" #BEGIN1="ngModel" class="form-control" type="date"  id="BEGIN1" name="BEGIN1"   [ngClass]="{ 'is-invalid': f.submitted && BEGIN1.invalid }" required />
+                        <div *ngIf="!BEGIN1.invalid" class="invalid-feedback">
+                            <div *ngIf="!BEGIN1.errors.required">Fecha requerida</div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="end">{{label_end}}</label>
-                        <input type="date" class="form-control" name="end" [(ngModel)]="activitie.end" #end="ngModel" [ngClass]="{ 'is-invalid': f.submitted && activitie.end.invalid }" required />
+                        <input type="date" class="form-control" name="end" [(ngModel)]="activitie.END" #end="ngModel" [ngClass]="{ 'is-invalid': f.submitted && activitie.end.invalid }" required />
                         <div *ngIf="f.submitted && end.invalid" class="invalid-feedback">
                             <div *ngIf="activitie.end.errors.required">Fecha requerida</div>
                         </div>

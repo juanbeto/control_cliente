@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { auditactivities } from '../../../../models/index_audit';
+import { FormsModule }   from '@angular/forms';
+
 
 @Component({
   selector: 'app-activitie-new',

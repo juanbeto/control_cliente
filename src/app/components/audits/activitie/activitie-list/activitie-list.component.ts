@@ -37,7 +37,7 @@ export class ActivitieListComponent implements OnInit {
   }
 
   ocultarActividad(){
-    this.show_activities = false;
+    //this.show_activities = false;
   }
 
 }
