@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { auditactivities } from '../../../../models/index_audit';
+import { ActivitiesService } from '../../../../services/audits/activities.service';
 
 @Component({
   selector: 'app-activitie-list',
@@ -16,6 +17,7 @@ export class ActivitieListComponent implements OnInit {
   public label_numerals: string;
   public label_auditor: string;
   public actions: string;
+  public form_activities = false;
 
   public activitie = new auditactivities(null,null,null,null,null,null,null,null);
 
@@ -37,7 +39,7 @@ export class ActivitieListComponent implements OnInit {
   }
 
   ocultarActividad(){
-    //this.show_activities = false;
+    this.form_activities = false;
   }
 
 }

@@ -1,11 +1,11 @@
 export class auditactivities{
 	constructor(
-    public id: number,
-    public id_audit: number,
-    public begin: any,
-    public end: any,
-    public name: string,
-    public numerals_iso: string,
-    public numerals_meci: string,
-    public id_user_auditor: number){}
+    public ID: number,
+    public ID_AUDIT: number,
+    public BEGIN: any,
+    public END: any,
+    public NAME: string,
+    public NUMERALS_ISO: string,
+    public NUMERALS_MECI: string,
+    public ID_USER_AUDITOR: number){}
 }
