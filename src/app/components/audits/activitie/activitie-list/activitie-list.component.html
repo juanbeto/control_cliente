@@ -5,7 +5,7 @@
           <h2>Actividades</h2>
         </div>
         <div class="col-sm-6 ">
-          <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities; show_activities = !show_activities"><i class="fa fa-plus-circle"> Nueva Actividad</i></a>
+          <a href="#" class="btn btn-success" data-toggle="modal" (click)="form_activities = !form_activities; show_activities = !show_activities; form_activities_update=false;"><i class="fa fa-plus-circle"> Nueva Actividad</i></a>
         </div>
       </div>
   </div>
@@ -51,7 +51,7 @@
             <td>{{activitie.NUMERALS_MECI}} </td>
             <td>{{activitie.ID_USER_AUDITOR}} </td>
             <td>
-              <a [routerLink]="['../program-update', activitie.ID]" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
+              <a (click)="edit(activitie);form_activities=false" title="edit" class="edit btn btn-warning"><i class="fa fa-edit"> </i></a>
               <a (click)="delete(activitie.ID)" title="delete" class="delete btn btn-danger"><i class="fa fa-trash"> </i></a>
             </td>
           </tr>
@@ -59,4 +59,5 @@
   </table>
 </div>
 </div>
+<app-activitie-update  *ngIf="form_activities_update" [activitie]="activitie_update"  ></app-activitie-update>
 <app-activitie-new  *ngIf="form_activities" (formactivities)="ocultarActividad()" ></app-activitie-new>
