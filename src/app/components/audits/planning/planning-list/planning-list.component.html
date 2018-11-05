@@ -1,6 +1,14 @@
 <div class=" ">
-  <div class="table-title col-12" (click)="show_plannings = !show_plannings">
-      <h2>Planificación</h2>
+
+  <div class="table-title col-12"  (click)="show_plannings = !show_plannings">
+    <div class="row">
+        <div class="col-sm-6">
+          <h2>Planificación</h2>
+        </div>
+        <div class="col-sm-6 ">
+          <a href="#" class="btn btn-success" data-toggle="modal"mat-raised-button (click)="openDialog();show_plannings = !show_plannings"><i class="fa fa-plus-circle"> Nueva Pregunta</i></a>
+        </div>
+      </div>
   </div>
 </div>
 

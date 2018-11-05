@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { auditplanning } from '../../../../models/index_audit';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { trigger, state, style, transition, animate } from '@angular/animations';
+import { auditplanning, auditquestion } from '../../../../models/index_audit';
+import { PlanningNewComponent } from '../planning-new/planning-new.component';
 
 @Component({
   selector: 'app-planning-list',
@@ -22,7 +25,9 @@ export class PlanningListComponent implements OnInit {
 
   @Input() public plannings: auditplanning;
 
-  constructor() {
+  // public dialog: MatDialog;
+
+  constructor(public dialog: MatDialog) {
     this.label_id = "#";
     this.label_area = "Area";
     this.label_cycle = "Ciclo";
@@ -38,6 +43,18 @@ export class PlanningListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PlanningNewComponent, {
+      width: '80%',
+      //data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // /this.animal = result;
+    });
   }
 
 }

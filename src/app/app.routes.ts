@@ -1,6 +1,8 @@
 import {  ModuleWithProviders } from '@angular/core';
 import {  RouterModule, Routes } from '@angular/router';
 
+//Estructura del portal
+import { HomeComponent } from './components/home/home.component';
 //component
 import { AreasDetailComponent } from './components/audits/areas-detail/areas-detail.component';
 import { QuestionDetailComponent } from './components/audits/question-detail/question-detail.component';
@@ -24,6 +26,7 @@ import { AuditNewComponent } from './components/audits/audit/audit-new/audit-new
 import { AuditUpdateComponent } from './components/audits/audit/audit-update/audit-update.component';
 
 
+
 const appRoutes: Routes = [
   {path:'audits/areas', component: AreasDetailComponent },
   {path:'audits/question', component: QuestionListComponent },
@@ -45,6 +48,8 @@ const appRoutes: Routes = [
   {path:'audits/audit-new', component: AuditNewComponent },
   {path:'audits/audit/:id', component: AuditDetailComponent },
   {path:'audits/audit-update/:id', component: AuditUpdateComponent },
+
+  {path:'home', component: HomeComponent },
 
   {path:'**', pathMatch: 'full', redirectTo: '' }
 ];
