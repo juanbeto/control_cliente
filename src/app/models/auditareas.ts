@@ -1,5 +1,5 @@
 export class auditareas{
 	constructor(
- 		public id: number,
-    public name: string){}
+ 		public ID: number,
+    public NAME: string){}
 }

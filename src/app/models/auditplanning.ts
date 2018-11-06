@@ -1,13 +1,14 @@
 export class auditplanning{
 	constructor(
- 		public id: number,
-    public id_audit: number,
-    public id_area: number,
-    public cycle: string,
-    public question: string,
-    public numerals: string,
-    public records: string,
-    public observation: string,
-    public accordance: string,
-    public action: string){}
+ 		public ID: number,
+    public ID_AUDIT: number,
+    public ID_AREA: number,
+    public CYCLE: string,
+    public QUESTION: string,
+    public NUMERALS_ISO: string,
+		public NUMERALS_MECI: string,
+    public RECORDS: string,
+    public OBSERVATION: string,
+    public ACCORDANCE: string,
+    public ACTION: string){}
 }

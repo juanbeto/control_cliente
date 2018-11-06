@@ -12,6 +12,7 @@ import { ActivitiesService } from '../../../../services/audits/activities.servic
 })
 export class ActivitieNewComponent implements OnInit {
     public label_title: string;
+    public label_button: string;
     public label_begin: string;
     public label_end: string;
     public label_name: string;
@@ -29,6 +30,7 @@ export class ActivitieNewComponent implements OnInit {
       private _activitieService: ActivitiesService
     ) {
     this.label_title = "Nueva ";
+    this.label_button = "Adicionar";
     this.label_begin = "Fecha Inicio";
     this.label_end = "Fecha Cierre";
     this.label_name = "Proceso/Actividad";
@@ -47,8 +49,7 @@ export class ActivitieNewComponent implements OnInit {
     this.formactivities.emit(1);
   }
 
-  onSubmit(){
-    console.log(this.activitie);
+  onSubmit(){    
     this._route.params.subscribe(
       params => {
         let id_audit = +params['id'];

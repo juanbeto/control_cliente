@@ -18,8 +18,10 @@ export class ActivitieListComponent implements OnInit {
   public label_auditor: string;
   public actions: string;
   public form_activities = false;
+  public form_activities_update = false;
 
   public activitie = new auditactivities(null,null,null,null,null,null,null,null);
+  public activitie_update: auditactivities;
 
   @Input() public activities: auditactivities;
 
@@ -40,6 +42,11 @@ export class ActivitieListComponent implements OnInit {
 
   ocultarActividad(){
     this.form_activities = false;
+  }
+
+  edit(_activitie:auditactivities){
+    this.activitie_update = _activitie;
+    this.form_activities_update = true;
   }
 
 }

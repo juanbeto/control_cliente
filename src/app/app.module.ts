@@ -66,6 +66,7 @@ import { ActivitieListComponent } from './components/audits/activitie/activitie-
 import { ActivitieNewComponent } from './components/audits/activitie/activitie-new/activitie-new.component';
 import { HomeComponent, DialogOverviewExampleDialog } from './components/home/home.component';
 import { PlanningNewComponent } from './components/audits/planning/planning-new/planning-new.component';
+import { ActivitieUpdateComponent } from './components/audits/activitie/activitie-update/activitie-update.component';
 
 @NgModule({
   declarations: [
@@ -90,13 +91,14 @@ import { PlanningNewComponent } from './components/audits/planning/planning-new/
     PlanningListComponent,
     ActivitieListComponent,
     ActivitieNewComponent,
+    ActivitieUpdateComponent,
     HomeComponent, DialogOverviewExampleDialog, PlanningNewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     APP_ROUTING,
-    HttpClientModule, MatDialogModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule
+    HttpClientModule, MatDialogModule, MatFormFieldModule, MatInputModule, BrowserAnimationsModule, MatCardModule
   ],
   providers: [
   ],
