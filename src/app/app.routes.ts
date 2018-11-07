@@ -25,6 +25,8 @@ import { AuditDetailComponent } from './components/audits/audit/audit-detail/aud
 import { AuditNewComponent } from './components/audits/audit/audit-new/audit-new.component';
 import { AuditUpdateComponent } from './components/audits/audit/audit-update/audit-update.component';
 
+import { AuditListRunComponent } from './components/audits/audit/audit-list-run/audit-list-run.component';
+
 
 
 const appRoutes: Routes = [
@@ -48,6 +50,9 @@ const appRoutes: Routes = [
   {path:'audits/audit-new', component: AuditNewComponent },
   {path:'audits/audit/:id', component: AuditDetailComponent },
   {path:'audits/audit-update/:id', component: AuditUpdateComponent },
+
+  {path:'audits/list-run', component: AuditListRunComponent },
+  //AuditListRun
 
   {path:'home', component: HomeComponent },
 

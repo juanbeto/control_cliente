@@ -1,0 +1,29 @@
+<div class="container formato">
+  <div class="" *ngIf="audits">
+    <table class="table table-striped table-hover table-primary">
+        <thead>
+            <tr class="bg-primary">
+
+              <th>{{label_id}}</th>
+              <th>{{label_name}}</th>
+              <th>{{label_objective}}</th>
+              <th>{{label_date_begin}}</th>
+              <th>{{label_date_end}}</th>
+              <th>{{actions}}</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr *ngFor="let audit of audits;let i = index;" scope="row">
+            <td>{{ i + 1 }}</td>
+            <td class="label_name">{{audit.NAME}}</td>
+            <td class="label_objective">{{ (audit.OBJECTIVE.length>150)? (audit.OBJECTIVE | slice:0:150)+'..':(audit.OBJECTIVE) }}</td>
+            <td>{{audit.DATE_BEGIN}}</td>
+            <td>{{audit.DATE_END}}</td>
+            <td>
+              <a [routerLink]="['/audits/audit', audit.ID]" title="edit" class="edit btn btn-success"><i class="fa fa-check"> </i></a>              
+            </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

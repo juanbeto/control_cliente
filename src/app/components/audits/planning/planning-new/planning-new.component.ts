@@ -62,7 +62,7 @@ export class PlanningNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.planning = new auditplanning('', this.idAudit, '','','','','','','','','');
+    this.planning = new auditplanning(null, this.idAudit, 1,'','','','','','','','');
 
 
     this.getQuestions();
