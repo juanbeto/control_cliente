@@ -15,6 +15,8 @@ export class AuditAppliedRunComponent implements OnInit {
 
   public _audit: audit;
   public plannings: auditprogram;
+  public label_id: string;
+  public label_id_program:string;
   public label_title: string;
   public label_name: string;
   public label_id_user_manager: string;
@@ -47,7 +49,6 @@ export class AuditAppliedRunComponent implements OnInit {
 
     this.label_name_process = 'Nombre del proceso';
 
-    this.actions = 'Acciones';
     this._audit = new audit(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null);;
     this.getFormat();
     this.getAudit();
