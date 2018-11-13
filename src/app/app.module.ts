@@ -68,6 +68,8 @@ import { HomeComponent, DialogOverviewExampleDialog } from './components/home/ho
 import { PlanningNewComponent } from './components/audits/planning/planning-new/planning-new.component';
 import { ActivitieUpdateComponent } from './components/audits/activitie/activitie-update/activitie-update.component';
 import { AuditListRunComponent } from './components/audits/audit/audit-list-run/audit-list-run.component';
+import { AuditAppliedRunComponent } from './components/audits/audit/audit-applied-run/audit-applied-run.component';
+import { PlanningListRunComponent } from './components/audits/planning/planning-list-run/planning-list-run.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,7 @@ import { AuditListRunComponent } from './components/audits/audit/audit-list-run/
     ActivitieListComponent,
     ActivitieNewComponent,
     ActivitieUpdateComponent,
-    HomeComponent, DialogOverviewExampleDialog, PlanningNewComponent, AuditListRunComponent
+    HomeComponent, DialogOverviewExampleDialog, PlanningNewComponent, AuditListRunComponent, AuditAppliedRunComponent, PlanningListRunComponent
   ],
   imports: [
     BrowserModule,
