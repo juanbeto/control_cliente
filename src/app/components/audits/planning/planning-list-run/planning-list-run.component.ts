@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { auditplanning, auditquestion } from '../../../../models/index_audit';
-import { PlanningNewComponent } from '../planning-new/planning-new.component';
+import { PlanningUpdateRunComponent } from '../planning-update-run/planning-update-run.component';
 import { PlanningService } from '../../../../services/audits/planning.service';
 
 @Component({
@@ -53,5 +53,38 @@ export class PlanningListRunComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  openDialog(id:number): void {
+    console.log('The dialog was closed');
+    const dialogRef = this.dialog.open(PlanningUpdateRunComponent, {
+      width: '50%',
+      height: '50%',
+      data: id
+    });
+     console.log("id audioria::::"+this.idAudit);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.getPlannings();
+    });
+  }
+
+  getPlannings(){
+    this._route.params.subscribe(
+      params => {
+        let id = +params['id'];
+        this._planningService.getPlanningsByAudit(id).subscribe(
+          response =>{
+            if(response.status == 'success'){
+              this.plannings = response.plannings;
+              console.log(this.plannings);
+            }
+          },
+          error=>{
+              console.log(error);
+          }
+        );
+        }
+      );
+    }
 
 }
