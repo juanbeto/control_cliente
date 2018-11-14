@@ -23,6 +23,7 @@ export class PlanningListRunComponent implements OnInit {
   public label_observation: string;
   public label_accordance: string;
   public label_actions: string;
+  public label_action: string;
 
 
   public idAudit: number;
@@ -46,6 +47,7 @@ export class PlanningListRunComponent implements OnInit {
       this.label_observation = "Comentario/Observacion/Conclusión";
       this.label_accordance = "AR/NC/AM";
       this.label_actions = "Hallazgos";
+      this.label_action = "Ejecutar";
 
     }
 
