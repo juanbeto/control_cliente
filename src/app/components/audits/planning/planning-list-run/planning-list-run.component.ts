@@ -58,7 +58,7 @@ export class PlanningListRunComponent implements OnInit {
     console.log('The dialog was closed');
     const dialogRef = this.dialog.open(PlanningUpdateRunComponent, {
       width: '50%',
-      height: '50%',
+      height: '70%',
       data: id
     });
      console.log("id audioria::::"+this.idAudit);
