@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -17,9 +18,20 @@ export class TypeService {
     this.url = GLOBAL.url+"risks/type";
   }
 
-  create(type: riskstype): Observable<any>{}
+  create(type: riskstype): Observable<any>{
+    let json = JSON.stringify(type);
+    let params = "json= "+json;
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.post<any>(this.url, params, {headers: headers});
+  }
 
-  getTypes(): Observable<any>{}
+  getTypes(): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+    return this._http.get<any>(this.url, {headers: headers});
 
-  getType(id): Observable<any>{}
+  }
+
+  getType(id): Observable<any>{
+        return this._http.get(this.url+'/'+id);
+  }
 }
